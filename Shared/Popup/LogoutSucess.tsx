@@ -2,7 +2,7 @@
 
 import { cn } from '@/Shared/lib/utils';
 import FormPopup from './FormPopup';
-import { setClearForm } from '../Redux/ReduxSlices/uiSlice'; 
+import { setClearForm } from '../Redux/ReduxSlices/uiSlice';
 import { useAppDispatch } from '@/hooks/useReduxHook';
 import { useRouter } from 'next/navigation';
 import { useCallback } from 'react';
@@ -71,22 +71,18 @@ const LogoutSucess = ({
         title: modalTitle,
       }}
       hideFooter={true}
-      className="w-[95%] sm:w-[450px] px-4 py-4 bg-white overflow-hidden mx-auto"
+      className="mx-auto w-[95%] overflow-hidden bg-white px-4 py-4 sm:w-[450px]"
       style={{ height: newheight || '180px' }}
       buttonClassName="w-full hover:text-white h-12"
       titleClassName="bg-white"
     >
-      <div className="w-full h-full flex flex-col justify-start px-1 items-center text-center">
-        <div className="w-25 h-25  rounded-full flex items-center justify-center mb-3">
-          <img
-            src={icon}
-            className="h-25 w-25 "
-            alt="popup-icon"
-          />
+      <div className="flex h-full w-full flex-col items-center justify-start px-1 text-center">
+        <div className="mb-3 flex h-25 w-25 items-center justify-center rounded-full">
+          <img src={icon} className="h-25 w-25" alt="popup-icon" />
         </div>
         <h2
           className={cn(
-            'text-xl font-opensans-semibold text-dark text-balance mb-2',
+            'font-opensans-semibold text-dark mb-2 text-xl text-balance',
             classNameTitle,
           )}
         >
@@ -94,18 +90,18 @@ const LogoutSucess = ({
         </h2>
         <p
           className={cn(
-            'text-[#646767] font-opensans-regular px-4 mb-3 text-15 leading-relaxed',
+            'font-opensans-regular text-15 mb-3 px-4 leading-relaxed text-[#646767]',
             classNameSubText,
           )}
         >
           {description}
         </p>
         {rows?.length > 0 && (
-          <div className="w-full bg-[#1A5E631A] rounded-sm p-4 text-sm">
+          <div className="w-full rounded-sm bg-[#1A5E631A] p-4 text-sm">
             {rows?.map((item, index) => (
               <div
                 key={index}
-                className="flex justify-between items-center font-opensans-regular py-2 border-b border-[#D6DDDD] last:border-none text-[#2D3436]"
+                className="font-opensans-regular flex items-center justify-between border-b border-[#D6DDDD] py-2 text-[#2D3436] last:border-none"
               >
                 <span>{item?.label}</span>
                 <span className="font-opensans-regular text-[#2D3436]">
@@ -116,15 +112,15 @@ const LogoutSucess = ({
           </div>
         )}
 
-        <div className="flex gap-4 w-full mt-3">
+        <div className="mt-3 flex w-full gap-4">
           <button
-            className="flex-1 h-14 cursor-pointer rounded-sm bg-[#2D3436] text-white"
+            className="h-14 flex-1 cursor-pointer rounded-sm bg-[#2D3436] text-white"
             onClick={handleSecondary}
           >
             {secondaryText}
           </button>
           <button
-            className="flex-1 h-14 cursor-pointer rounded-sm bg-[#aa6435] text-white"
+            className="h-14 flex-1 cursor-pointer rounded-sm bg-[#aa6435] text-white"
             onClick={handlePrimary}
           >
             {primaryText}

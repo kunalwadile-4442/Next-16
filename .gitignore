@@ -46,3 +46,5 @@ build.sh
 # package-lock.json
 # yarn.lock
 # pnpm-lock.yaml
+
+build.sh

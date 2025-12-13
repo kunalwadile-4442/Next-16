@@ -3,7 +3,7 @@
 import { useCallback } from 'react';
 
 import { setClearForm } from '@/Shared/Redux/ReduxSlices/uiSlice';
-import { useAppDispatch} from './useReduxHook';
+import { useAppDispatch } from './useReduxHook';
 
 type ModalStatus = 'show' | 'hide';
 

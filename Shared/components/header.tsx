@@ -38,7 +38,7 @@ export function Header() {
 
       const baseClass = cn(
         isMobile ? 'block rounded px-3 py-2' : 'transition-colors',
-        'font-opensans-semibold text-md'
+        'font-opensans-semibold text-md',
       );
 
       const stateClass = active
@@ -62,12 +62,10 @@ export function Header() {
       );
     });
 
-    const handleLogout = useCallback(
+  const handleLogout = useCallback(
     () => openModal({ name: 'Thank You' }),
     [openModal],
   );
-
-
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-white">
@@ -90,7 +88,7 @@ export function Header() {
                   'h-10 border-blue-600',
                   pathname === App_url.link.DASHBOARD_URL
                     ? 'bg-blue-600 text-white'
-                    : 'text-blue-600 border border-blue-600 bg-transparent'
+                    : 'border border-blue-600 bg-transparent text-blue-600',
                 )}
               >
                 <Link href={App_url.link.DASHBOARD_URL}>
@@ -108,11 +106,11 @@ export function Header() {
 
               {/* Profile Dropdown */}
               {accessToken ? (
-                <span className="relative flex h-10 cursor-pointer items-center gap-1 rounded-sm bg-blue-600 px-3 text-white group">
+                <span className="group relative flex h-10 cursor-pointer items-center gap-1 rounded-sm bg-blue-600 px-3 text-white">
                   <img src={App_url.icon.PROFILE_ICON} alt="profile icon" />
                   <span>My Profile</span>
 
-                  <ul className="absolute right-0 top-full hidden w-30 rounded-sm border bg-white px-1 py-1 shadow group-hover:block">
+                  <ul className="absolute top-full right-0 hidden w-30 rounded-sm border bg-white px-1 py-1 shadow group-hover:block">
                     <li className="flex flex-col gap-1">
                       <Button
                         variant="ghost"
@@ -182,7 +180,7 @@ export function Header() {
                     'mb-3 h-10 border-blue-600',
                     pathname === App_url.link.DASHBOARD_URL
                       ? 'bg-blue-600 text-white'
-                      : 'text-blue-600 border border-blue-600 bg-transparent'
+                      : 'border border-blue-600 bg-transparent text-blue-600',
                   )}
                 >
                   <Link

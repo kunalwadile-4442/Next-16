@@ -1,5 +1,3 @@
-
-
 import LogoutSucess from '@/Shared/Popup/LogoutSucess';
 import { constructMetadata } from '@/Shared/seo';
 import { App_url } from '@/Shared/static';
@@ -29,29 +27,25 @@ export const metadata: Metadata = constructMetadata({
 });
 
 export default function Page() {
-
-
-    const balanceRows = useMemo(
+  const balanceRows = useMemo(
     () => [
       { label: 'Minimum Required:', value: '₹20' },
       { label: 'Current Balance:', value: '₹5' },
       { label: 'Shortfall:', value: '₹15' },
     ],
-    []
+    [],
   );
-
-
 
   return (
     <>
-  <HomePage />
-   <LogoutSucess
+      <HomePage />
+      <LogoutSucess
         modalTitle="Thank You"
         description="You have successfully logged out"
         newheight="420px"
         icon={App_url?.icon?.SUCCESS_GIF}
         rows={balanceRows}
       />
-      </>
-  )
+    </>
+  );
 }

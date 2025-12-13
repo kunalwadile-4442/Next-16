@@ -6,9 +6,7 @@ function StandardLayout({ children }: { children: React.ReactNode }) {
   return (
     <div className="flex min-h-screen flex-col">
       <Header />
-      <main className="container mx-auto flex-1 px-3">
-        {children}
-      </main>
+      <main className="container mx-auto flex-1 px-3">{children}</main>
       <Footer />
     </div>
   );

@@ -45,10 +45,10 @@ export default function RootLayout({
       <body suppressHydrationWarning>
         <ReduxProvider>
           {/* <WebSocketProvider> */}
-            <CustomLoader />
-            <Suspense fallback={<PageLoader show />}>
-              <StandardLayout>{children}</StandardLayout>
-            </Suspense>
+          <CustomLoader />
+          <Suspense fallback={<PageLoader show />}>
+            <StandardLayout>{children}</StandardLayout>
+          </Suspense>
           {/* </WebSocketProvider> */}
         </ReduxProvider>
       </body>
