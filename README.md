@@ -90,3 +90,6 @@ Next.js Metadata API.
 - Title & Description
 - Open Graph (OG) tags for social media sharing
 ```
+
+
+ mongod --dbpath ~/Documents/mongodb/data/db
